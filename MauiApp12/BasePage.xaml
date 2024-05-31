@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:l="clr-namespace:MauiApp12"
+             x:Class="MauiApp12.BasePage"
+             x:DataType="l:BaseViewModel">
+
+    <Shell.TitleView>
+        <Grid
+      BackgroundColor="{AppThemeBinding Dark={StaticResource PrimaryDark}, Light={StaticResource Primary}}"
+      RowDefinitions="*,1" ColumnDefinitions="*,auto"
+      RowSpacing="0" ColumnSpacing="0"
+      HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Label
+          x:Name="LblTitolo"
+          VerticalTextAlignment="Center"
+          Text="{Binding TitoloPagina}"
+          Grid.Row="0" Grid.Column="0"
+          Padding="10,0,0,0"
+          FontAutoScalingEnabled="True"
+          LineBreakMode="WordWrap"
+          TextColor="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource White}}" />
+            <ContentView 
+              x:Name="ContentIcone"
+              Background="Red"
+              Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+            </ContentView>
+        </Grid>
+    </Shell.TitleView>
+</ContentPage>

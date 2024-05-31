@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp12.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp12"
+    Title="MauiApp12"
+    FlyoutHeaderBehavior="CollapseOnScroll">
+
+    <Shell.BindingContext>
+        <local:ShellViewModel />
+    </Shell.BindingContext>
+    
+    <!--<Shell.FlyoutIcon>
+        <FontImageSource x:Name="iconaMenu" Color="{Binding Color}" FontFamily="FontIcone" Glyph="{Binding Glyph}" />
+    </Shell.FlyoutIcon>-->
+    
+    <ShellContent 
+        FlyoutItemIsVisible="False" Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+
+</Shell>

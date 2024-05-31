@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BasePage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp12"                 
+    x:Class="MauiApp12.SecondPage">
+
+    <ContentPage.BindingContext>
+        <local:SecondPageViewModel />
+    </ContentPage.BindingContext>
+
+    <AbsoluteLayout>
+
+        <Grid Margin="5" RowDefinitions="auto,auto,auto,auto" RowSpacing="5" AbsoluteLayout.LayoutFlags="SizeProportional" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Label
+                            Grid.Row="0"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="lbl header" 
+                            FontFamily="FontIcone" FontSize="Medium" FontAttributes="Bold">
+              
+            </Label>
+
+            <Label
+                            Grid.Row="1"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="lbl TimeZone" FontSize="Medium" FontAttributes="Bold">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ApriModificaTimeZoneManualeCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="2">
+                <Grid VerticalOptions="Fill" ColumnSpacing="5" HorizontalOptions="FillAndExpand">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="{Binding ColonnaCentrale}"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="5" />
+                        <!--4 vuota-->
+                        <RowDefinition Height="1" />
+                        <!--separatore-->
+                        <RowDefinition Height="5" />
+                        <!--6 vuota-->
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!--#region Viaggio andata-->
+                    <Label
+                                    Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                                    Text="outward journey"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand" />
+
+                    <Button
+                                    Grid.Row="1" Grid.Column="0"
+                                    LineBreakMode="WordWrap"
+                                Command="{Binding TestCommand}"
+                                    Text="set to red + message"
+                                    IsEnabled="true" />
+
+                    <Button
+                                    Grid.Row="1" Grid.Column="1"
+                                IsEnabled="False"
+                                    Text="v" />
+
+                    <Button
+                                    Grid.Row="1" Grid.Column="2"
+                                    LineBreakMode="WordWrap"
+                                    Command="{Binding ApriModificaDataCommand}"
+                                    Text="set to white + menu" />
+                    <!--#endregion-->
+
+                    <!--#region Attività mattino-->
+                    <Label
+                                    Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
+                                    Text="morning activity"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand" />
+
+                    <Button
+                                    Grid.Row="3" Grid.Column="0"
+                                    LineBreakMode="WordWrap"
+                                    IsEnabled="False"
+                                    Text="start 2" />
+
+                    <Button
+                                    Grid.Row="3" Grid.Column="1"
+                                IsEnabled="False"
+                                    Text="V" />
+
+                    <Button
+                                    Grid.Row="3" Grid.Column="2"
+                                    LineBreakMode="WordWrap"
+                                    IsEnabled="False"
+                                    Text="end 2" />
+                    <!--#endregion-->
+
+                    <BoxView HeightRequest="1" Color="Orange" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" />
+
+                    <!--#region Attivita pomeriggio-->
+                    <Label
+                                    Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3"
+                                    Text="afternoon activity"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand" />
+
+                    <Button
+                                    Grid.Row="8" Grid.Column="0"
+                                    LineBreakMode="WordWrap"
+                                    IsEnabled="False"
+                                    Text="start 3" />
+
+                    <Button 
+                                    Grid.Row="8" Grid.Column="1"
+                                IsEnabled="False"
+                                    Text="V" />
+
+                    <Button
+                                    Grid.Row="8" Grid.Column="2"
+                                    LineBreakMode="WordWrap"
+                                IsEnabled="False"
+                                    Text="end 3" />
+                    <!--#endregion-->
+
+                    <!--#region Viaggio ritorno-->
+                    <Label
+                                    Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3"
+                                    Text="return journey"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand" />
+
+                    <Button
+                                    Grid.Row="10" Grid.Column="0"
+                                    LineBreakMode="WordWrap"
+                                 IsEnabled="False" Text="start 4"/>
+
+                    <Button 
+                                    Grid.Row="10" Grid.Column="1"
+                                IsEnabled="False"
+                                 Text="V" />
+
+                    <Button
+                                    Grid.Row="10" Grid.Column="2"
+                                    LineBreakMode="WordWrap"
+                                IsEnabled="False"
+                                Text="end 4"/>
+                    <!--#endregion-->
+
+                    <Editor 
+                                    Margin="0,20,0,0"   
+                                    MinimumHeightRequest="100"
+                                    Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="3"
+                                    Text="notes" 
+                                />
+                </Grid>
+            </ScrollView>
+        </Grid>
+
+    </AbsoluteLayout>
+</local:BasePage>
